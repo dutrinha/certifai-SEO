@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CertifAI - Biblioteca de Estudos | CertifAI</title>
+    <meta name="description" content="Guia completo e gratuito para certificações financeiras (CPA, C-Pro).">
+
+    <!-- Canonical URL (SEO Técnico) -->
+    <link rel="canonical" href="https://certifai.com.br/index">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <!-- Open Graph (Social Media) -->
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="CertifAI - Biblioteca de Estudos">
+    <meta property="og:description" content="Guia completo e gratuito para certificações financeiras (CPA, C-Pro).">
+    <meta property="og:url" content="https://certifai.com.br/index">
+    <meta property="og:site_name" content="CertifAI">
+    <meta property="og:image" content="https://certifai.com.br/share-image.jpg"> <!-- Imagem padrão -->
+
+    <!-- Schema.org (Dados Estruturados) -->
+    <script type="application/ld+json">
+    {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "CertifAI - Biblioteca de Estudos",
+  "description": "Guia completo e gratuito para certifica\u00e7\u00f5es financeiras (CPA, C-Pro).",
+  "image": "https://certifai.com.br/share-image.jpg",
+  "author": {
+    "@type": "Organization",
+    "name": "CertifAI"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CertifAI",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://certifai.com.br/favicon.png"
+    }
+  },
+  "datePublished": "2026-01-22",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://certifai.com.br/index"
+  }
+}
+    </script>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #00C853;
+            /* Emerald Green */
+            --primary-dark: #009624;
+            --secondary: #1a202c;
+            /* Dark Slate */
+            --accent-warning: #FF9800;
+            --bg-color: #f8fafc;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.95);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Reset & Base */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Typography */
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Outfit', sans-serif;
+            color: var(--secondary);
+            font-weight: 700;
+            margin-bottom: 0.75em;
+            line-height: 1.25;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        h2 {
+            font-size: 1.75rem;
+            border-left: 4px solid var(--primary);
+            padding-left: 1rem;
+            margin-top: 2.5rem;
+        }
+
+        h3 {
+            font-size: 1.35rem;
+            margin-top: 2rem;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.125rem;
+        }
+
+        strong {
+            color: var(--secondary);
+            font-weight: 600;
+        }
+
+        ul,
+        ol {
+            margin-bottom: 1.5rem;
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Links */
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-dark);
+            text-decoration: underline;
+        }
+
+        /* Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            padding: 1rem 2rem;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            font-size: 1.75rem;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo img {
+            height: 32px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .logo:hover {
+            text-decoration: none;
+        }
+
+        .btn-nav {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 0.6rem 1.25rem;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-md);
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        /* Main Layout */
+        main {
+            max-width: 800px;
+            margin: 3rem auto;
+            padding: 0 1.5rem;
+        }
+
+        article {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            margin-bottom: 3rem;
+        }
+
+        .meta-info {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        /* EXAM TIP BOX (Dica de Prova) - UX/Conversion */
+        .exam-tip-box {
+            background-color: #FFF8E1;
+            /* Amber 50 */
+            border-left: 5px solid var(--accent-warning);
+            padding: 1.5rem;
+            margin: 2.5rem 0;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .exam-tip-box h3 {
+            color: #E65100;
+            /* Orange 900 */
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .exam-tip-box p {
+            margin-bottom: 0;
+            color: #4E342E;
+            font-size: 1.05rem;
+        }
+
+        /* CTA Section */
+        .cta-box {
+            background: linear-gradient(135deg, #00C853 0%, #009624 100%);
+            color: white;
+            padding: 3rem;
+            border-radius: 16px;
+            text-align: center;
+            margin: 4rem 0;
+            box-shadow: 0 20px 25px -5px rgba(0, 200, 83, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box h2 {
+            color: white;
+            border: none;
+            padding: 0;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        .cta-box p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .btn-cta {
+            background: white;
+            color: var(--primary-dark);
+            padding: 1rem 2.5rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.125rem;
+            box-shadow: var(--shadow-md);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            text-decoration: none;
+        }
+
+        .cta-bg-circle {
+            position: absolute;
+            top: -50%;
+            left: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            background: white;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            article {
+                padding: 1.5rem;
+            }
+
+            .header-container {
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <a href="https://app.certifai.com.br/" class="logo">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAfQAAAH0CAYAAADL1t+KAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAEpWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSfvu78nIGlkPSdXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQnPz4KPHg6eG1wbWV0YSB4bWxuczp4PSdhZG9iZTpuczptZXRhLyc+CjxyZGY6UkRGIHhtbG5zOnJkZj0naHR0cDovL3d3dy53My5vcmcvMTk5OS8wMi8yMi1yZGYtc3ludGF4LW5zIyc+CgogPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9JycKICB4bWxuczpBdHRyaWI9J2h0dHA6Ly9ucy5hdHRyaWJ1dGlvbi5jb20vYWRzLzEuMC8nPgogIDxBdHRyaWI6QWRzPgogICA8cmRmOlNlcT4KICAgIDxyZGY6bGkgcmRmOnBhcnNlVHlwZT0nUmVzb3VyY2UnPgogICAgIDxBdHRyaWI6Q3JlYXRlZD4yMDI1LTExLTI1PC9BdHRyaWI6Q3JlYXRlZD4KICAgICA8QXR0cmliOkV4dElkPjgxZGY0ZWQxLWVkNDEtNDRjMS04OTYxLTBkMWEwODA4ZDY0MTwvQXR0cmliOkV4dElkPgogICAgIDxBdHRyaWI6RmJJZD41MjUyNjU5MTQxNzk1ODA8L0F0dHJpYjpGYklkPgogICAgIDxBdHRyaWI6VG91Y2hUeXBlPjI8L0F0dHJpYjpUb3VjaFR5cGU+CiAgICA8L3JkZjpsaT4KICAgPC9yZGY6U2VxPgogIDwvQXR0cmliOkFkcz4KIDwvcmRmOkRlc2NyaXB0aW9uPgoKIDxyZGY6RGVzY3JpcHRpb24gcmRmOmFib3V0PScnCiAgeG1sbnM6ZGM9J2h0dHA6Ly9wdXJsLm9yZy9kYy9lbGVtZW50cy8xLjEvJz4KICA8ZGM6dGl0bGU+CiAgIDxyZGY6QWx0PgogICAgPHJkZjpsaSB4bWw6bGFuZz0neC1kZWZhdWx0Jz5BZGQgYSBoZWFkaW5nIC0gMTwvcmRmOmxpPgogICA8L3JkZjpBbHQ+CiAgPC9kYzp0aXRsZT4KIDwvcmRmOkRlc2NyaXB0aW9uPgoKIDxyZGY6RGVzY3JpcHRpb24g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" alt="Logo">
+                CertifAI
+            </a>
+            <a href="https://app.certifai.com.br/onboarding" class="btn-nav">Entrar na Plataforma</a>
+        </div>
+    </header>
+
+    <main>
+        <article>
+            <div class="meta-info">Certificações Financeiras &bull; Guia Completo</div>
+            <h1>CertifAI - Biblioteca de Estudos</h1>
+
+            <div class="content">
+                <p style='font-size: 1.2rem; margin-bottom: 2rem;'>Explore nossa base de conhecimento gerada por inteligência artificial, revisada para garantir sua aprovação.</p><div style='display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2rem;'>
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="o-que-e-fundo-garantidor-de-creditos-fgc" style="color: #1a202c; text-decoration: none;">O que é o Fundo Garantidor de Créditos (FGC): Um Guia Completo para Investidores e Profissionais</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o que é o FGC, como funciona a garantia para seus investimentos e sua importância na segurança do sistema financeiro brasileiro.</p>
+            <a href="o-que-e-fundo-garantidor-de-creditos-fgc" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="como-funciona-fundo-garantidor-creditos" style="color: #1a202c; text-decoration: none;">Como Funciona o Fundo Garantidor de Créditos (FGC): Um Guia Completo</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o que é o FGC, como ele protege seus investimentos e por que é fundamental para a segurança do sistema financeiro brasileiro.</p>
+            <a href="como-funciona-fundo-garantidor-creditos" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="limites-cobertura-fgc-seguranca-financeira" style="color: #1a202c; text-decoration: none;">Limites de Cobertura do FGC: Protegendo Seu Dinheiro em Instituições Financeiras</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda os limites de cobertura do Fundo Garantidor de Créditos (FGC) e como ele protege seus investimentos em diversas instituições financeiras.</p>
+            <a href="limites-cobertura-fgc-seguranca-financeira" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="investimentos-protegidos-fgc" style="color: #1a202c; text-decoration: none;">Quais Investimentos São Protegidos pelo FGC (Fundo Garantidor de Créditos)?</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Descubra quais investimentos possuem a proteção do FGC, entendendo os limites e coberturas para sua segurança financeira.</p>
+            <a href="investimentos-protegidos-fgc" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="investimentos-nao-cobertos-fgc" style="color: #1a202c; text-decoration: none;">Investimentos Não Cobertos pelo FGC: O Que Você Precisa Saber</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Descubra quais investimentos não possuem a garantia do Fundo Garantidor de Créditos (FGC) e proteja seu patrimônio.</p>
+            <a href="investimentos-nao-cobertos-fgc" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="nova-estrutura-certificacoes-anbima-2026" style="color: #1a202c; text-decoration: none;">Entenda a Nova Estrutura das Certificações ANBIMA a Partir de 2026</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Explore as mudanças nas certificações ANBIMA a partir de 2026: CPA, C-Pro R e C-Pro I. Saiba o que você precisa para sua carreira financeira.</p>
+            <a href="nova-estrutura-certificacoes-anbima-2026" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="estrutura-certificacao-cpa-anbima" style="color: #1a202c; text-decoration: none;">Estrutura da Certificação CPA: Um Guia Detalhado para Profissionais Financeiros</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda a nova estrutura das certificações Anbima, focando na CPA, C-Pro R e C-Pro I, essenciais para sua carreira financeira.</p>
+            <a href="estrutura-certificacao-cpa-anbima" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="estrutura-certificacao-c-pro-r-anbima" style="color: #1a202c; text-decoration: none;">Entendendo a Estrutura da Certificação C-Pro R da Anbima para o Mercado Financeiro</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Explore a estrutura da nova certificação C-Pro R da Anbima, essencial para profissionais de varejo e alta renda a partir de 2026.</p>
+            <a href="estrutura-certificacao-c-pro-r-anbima" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="estrutura-certificacao-c-pro-i-anbima" style="color: #1a202c; text-decoration: none;">Entenda a Estrutura da Certificação C-Pro I da Anbima</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Descubra a estrutura da C-Pro I (ex-CEA) da Anbima. Conheça os módulos, conteúdos e o que esperar da certificação para especialistas em investimentos.</p>
+            <a href="estrutura-certificacao-c-pro-i-anbima" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="diferencas-cpa-cpro-r-cpro-i" style="color: #1a202c; text-decoration: none;">CPA, C-Pro R e C-Pro I: Entenda as Novas Certificações ANBIMA</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Descubra as diferenças entre CPA, C-Pro R e C-Pro I, as novas certificações ANBIMA que moldarão sua carreira financeira a partir de 2026.</p>
+            <a href="diferencas-cpa-cpro-r-cpro-i" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="o-que-sao-debentures-mercado-financeiro" style="color: #1a202c; text-decoration: none;">Debêntures: O Que São e Como Funcionam no Mercado Financeiro</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o que são debêntures, um título de dívida emitido por empresas para captar recursos. Saiba como funcionam e sua importância.</p>
+            <a href="o-que-sao-debentures-mercado-financeiro" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="o-que-sao-debentures-incentivadas" style="color: #1a202c; text-decoration: none;">Debêntures Incentivadas: Entenda o Investimento com Benefícios Fiscais</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Descubra o que são debêntures incentivadas, seus benefícios fiscais e como funcionam. Essencial para profissionais do mercado financeiro.</p>
+            <a href="o-que-sao-debentures-incentivadas" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="vantagens-riscos-debentures-incentivadas" style="color: #1a202c; text-decoration: none;">Debêntures Incentivadas: Vantagens, Riscos e o Cenário para Profissionais Certificados</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Explore as vantagens e os riscos das debêntures incentivadas, um investimento de renda fixa com benefícios fiscais. Entenda para sua carreira financeira.</p>
+            <a href="vantagens-riscos-debentures-incentivadas" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="tributacao-debentures-guia-investidores" style="color: #1a202c; text-decoration: none;">Tributação das Debêntures: Um Guia Completo para Investidores</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda a tributação das debêntures no Brasil. Guia técnico e educativo sobre imposto de renda, prazos e tipos de debêntures.</p>
+            <a href="tributacao-debentures-guia-investidores" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="debentures-comuns-vs-incentivadas" style="color: #1a202c; text-decoration: none;">Debêntures Comuns vs. Debêntures Incentivadas: Um Guia Técnico para Investidores</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda as diferenças entre debêntures comuns e incentivadas, seus benefícios fiscais e como escolher a melhor opção para seus investimentos.</p>
+            <a href="debentures-comuns-vs-incentivadas" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="o-que-sao-fundos-de-investimento" style="color: #1a202c; text-decoration: none;">Fundos de Investimento: Guia Completo para Entender e Investir</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o que são fundos de investimento, seus tipos, como funcionam e as vantagens de investir. Guia técnico e educativo para o investidor.</p>
+            <a href="o-que-sao-fundos-de-investimento" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="fundos-de-investimento-guia-tecnico" style="color: #1a202c; text-decoration: none;">Desvendando os Fundos de Investimento: Um Guia Técnico para Profissionais Financeiros</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o funcionamento técnico dos fundos de investimento, suas estruturas, tipos e como otimizar suas estratégias com foco nas novas certificações Anbima.</p>
+            <a href="fundos-de-investimento-guia-tecnico" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="classificacao-fundos-investimento-guia-tecnico" style="color: #1a202c; text-decoration: none;">Classificação dos Fundos de Investimento: Um Guia Técnico para Profissionais Financeiros</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda a classificação dos fundos de investimento, riscos, rentabilidade e como as novas certificações Anbima (CPA, C-Pro R, C-Pro I) se relacionam.</p>
+            <a href="classificacao-fundos-investimento-guia-tecnico" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="fundos-de-renda-fixa-guia-tecnico" style="color: #1a202c; text-decoration: none;">Fundos de Renda Fixa: Um Guia Técnico para Profissionais Financeiros</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda os Fundos de Renda Fixa em detalhes técnicos. Essencial para CPA e C-Pro R (ex CPA-20) da Anbima.</p>
+            <a href="fundos-de-renda-fixa-guia-tecnico" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="fundos-multimercado-estrategias-riscos-oportunidades" style="color: #1a202c; text-decoration: none;">Fundos Multimercado: Estratégias, Riscos e Oportunidades para Investidores</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o que são fundos multimercado, suas estratégias, riscos e como se encaixam no seu portfólio de investimentos. Conteúdo educativo.</p>
+            <a href="fundos-multimercado-estrategias-riscos-oportunidades" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="fundos-de-acoes-investimento-analise" style="color: #1a202c; text-decoration: none;">Fundos de Ações: Uma Análise Detalhada para Investidores e Profissionais Certificados</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Explore os Fundos de Ações: tipos, estratégias, riscos e como se preparar para as certificações Anbima atualizadas.</p>
+            <a href="fundos-de-acoes-investimento-analise" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="fundos-de-investimento-imobiliario-fiis-guia-tecnico" style="color: #1a202c; text-decoration: none;">Fundos de Investimento Imobiliário (FIIs): Um Guia Técnico e Educacional</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o que são Fundos de Investimento Imobiliário (FIIs), seus tipos, vantagens, desvantagens e como investir. Guia técnico para profissionais do mercado financeiro.</p>
+            <a href="fundos-de-investimento-imobiliario-fiis-guia-tecnico" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="fundos-exclusivos-fundos-restritos-anbima" style="color: #1a202c; text-decoration: none;">Fundos Exclusivos e Fundos Restritos: Entenda as Diferenças e o Contexto para Certificações ANBIMA</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Explore fundos exclusivos e restritos: características, investidores elegíveis e sua relevância para as certificações ANBIMA.</p>
+            <a href="fundos-exclusivos-fundos-restritos-anbima" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="cotas-fundos-investimento-guia-completo" style="color: #1a202c; text-decoration: none;">Cotas de Fundos de Investimento: Entenda Tudo para sua Carreira Financeira</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Descubra o que são cotas de fundos de investimento, como funcionam e sua importância para o mercado financeiro. Guia completo para profissionais e investidores.</p>
+            <a href="cotas-fundos-investimento-guia-completo" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="liquidez-fundos-investimento" style="color: #1a202c; text-decoration: none;">Liquidez dos Fundos de Investimento: Entendendo a Velocidade de Conversão em Dinheiro</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda a liquidez dos fundos de investimento, sua importância e como ela afeta seus retornos. Guia técnico para investidores.</p>
+            <a href="liquidez-fundos-investimento" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="taxa-de-administracao-fundos-investimento" style="color: #1a202c; text-decoration: none;">Taxa de Administração: Entendendo o Custo dos Fundos de Investimento</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o que é a taxa de administração em fundos de investimento, como ela impacta seus rendimentos e o que observar.</p>
+            <a href="taxa-de-administracao-fundos-investimento" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="taxa-de-performance-entenda-conceito-investimentos" style="color: #1a202c; text-decoration: none;">Taxa de Performance: Entenda Como Funciona e Sua Importância em Investimentos</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Descubra o que é a taxa de performance, como ela é calculada e sua relevância para investidores. Saiba mais!</p>
+            <a href="taxa-de-performance-entenda-conceito-investimentos" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="come-cotas-imposto-fundos-investimento" style="color: #1a202c; text-decoration: none;">Come-Cotas: Entenda o Imposto Semestral sobre Fundos de Investimento</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Descubra o que é o come-cotas, como funciona esse imposto semestral sobre fundos de investimento e seu impacto na sua rentabilidade.</p>
+            <a href="come-cotas-imposto-fundos-investimento" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="o-que-e-perfil-do-investidor" style="color: #1a202c; text-decoration: none;">O que é Perfil do Investidor: Guia Essencial para o Mercado Financeiro</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o que é perfil do investidor, sua importância e como ele molda suas estratégias de investimento. Essencial para certificações Anbima.</p>
+            <a href="o-que-e-perfil-do-investidor" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="tipos-perfil-investidor-certificacoes-anbima" style="color: #1a202c; text-decoration: none;">Tipos de Perfil do Investidor: Um Guia Essencial para Certificações Financeiras</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda os perfis de investidor (conservador, moderado, agressivo) e sua importância para as novas Certificações Anbima (CPA, C-Pro R, C-Pro I). Guia técnico e educativo.</p>
+            <a href="tipos-perfil-investidor-certificacoes-anbima" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="suitability-mercado-financeiro" style="color: #1a202c; text-decoration: none;">Suitability no Mercado Financeiro: Protegendo Investidores e a Integridade do Sistema</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o conceito de Suitability no mercado financeiro, sua importância para investidores e profissionais, e sua relação com as certificações Anbima.</p>
+            <a href="suitability-mercado-financeiro" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="adequacao-produtos-perfil-investidor" style="color: #1a202c; text-decoration: none;">Adequação de Produtos ao Perfil do Investidor: Um Guia Essencial para o Mercado Financeiro</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda a importância de adequar produtos financeiros ao perfil do investidor, essencial para consultores e o mercado em 2026.</p>
+            <a href="adequacao-produtos-perfil-investidor" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="o-que-e-risco-de-mercado" style="color: #1a202c; text-decoration: none;">O que é Risco de Mercado? Um Guia Completo para Profissionais Financeiros</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o que é risco de mercado, seus tipos e como ele impacta seus investimentos. Guia técnico para CPA, C-Pro R e C-Pro I da Anbima.</p>
+            <a href="o-que-e-risco-de-mercado" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="o-que-e-risco-de-credito-guia-tecnico" style="color: #1a202c; text-decoration: none;">O que é Risco de Crédito: Guia Técnico para Profissionais Financeiros</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o que é risco de crédito, sua importância no mercado financeiro e como ele afeta investimentos. Guia técnico para certificações ANBIMA.</p>
+            <a href="o-que-e-risco-de-credito-guia-tecnico" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="o-que-e-risco-de-liquidez-investimentos" style="color: #1a202c; text-decoration: none;">O Que é Risco de Liquidez: Conceito Essencial para Investidores</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o risco de liquidez em investimentos, seus tipos e como ele afeta suas aplicações financeiras. Essencial para profissionais certificados Anbima.</p>
+            <a href="o-que-e-risco-de-liquidez-investimentos" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="o-que-e-risco-operacional" style="color: #1a202c; text-decoration: none;">O Que é Risco Operacional: Um Guia Essencial para o Mercado Financeiro</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o que é risco operacional no mercado financeiro, seus tipos, causas e como mitigá-lo. Essencial para CPA e C-Pro.</p>
+            <a href="o-que-e-risco-operacional" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="o-que-e-marcacao-a-mercado" style="color: #1a202c; text-decoration: none;">Marcação a Mercado: Entenda o Conceito Financeiro Essencial</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Aprenda o que é marcação a mercado, seu impacto nos investimentos e como o conceito é fundamental nas certificações financeiras.</p>
+            <a href="o-que-e-marcacao-a-mercado" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="marcacao-na-curva-conceito-financeiro" style="color: #1a202c; text-decoration: none;">Marcação na Curva: Entendendo o Conceito e Suas Implicações Financeiras</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Descubra o que é marcação na curva, seu impacto em fundos de investimento e sua relevância nas novas certificações Anbima.</p>
+            <a href="marcacao-na-curva-conceito-financeiro" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="volatilidade-investimentos-guia-anbima" style="color: #1a202c; text-decoration: none;">Entendendo a Volatilidade dos Investimentos: Um Guia Completo para Certificações Anbima</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Explore o conceito de volatilidade em investimentos. Essencial para CPA, C-Pro R e C-Pro I. Saiba como gerenciar riscos e tomar decisões informadas.</p>
+            <a href="volatilidade-investimentos-guia-anbima" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="o-que-sao-titulos-publicos" style="color: #1a202c; text-decoration: none;">Títulos Públicos: O Que São e Como Funcionam no Mercado Financeiro</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o que são títulos públicos, seu funcionamento, tipos e importância para investidores e para o financiamento do Estado. Guia completo.</p>
+            <a href="o-que-sao-titulos-publicos" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="tipos-de-titulos-publicos-guia-completo" style="color: #1a202c; text-decoration: none;">Tipos de Títulos Públicos: Um Guia Completo para Investidores e Profissionais Financeiros</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda os diferentes tipos de títulos públicos no Brasil: Tesouro Selic, Tesouro Prefixado e Tesouro IPCA+. Guia técnico para investidores.</p>
+            <a href="tipos-de-titulos-publicos-guia-completo" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="tesouro-selic-guia-completo" style="color: #1a202c; text-decoration: none;">Tesouro Selic: O Que É e Como Funciona na Prática</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o Tesouro Selic, o título público mais conservador do Tesouro Direto. Saiba como funciona, rentabilidade e onde ele se encaixa em sua estratégia de investimentos.</p>
+            <a href="tesouro-selic-guia-completo" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="tesouro-prefixado-entenda-investimento" style="color: #1a202c; text-decoration: none;">Tesouro Prefixado: Desvendando o Título Público de Renda Fixa</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o que é o Tesouro Prefixado, como funciona, seus riscos e como ele se encaixa no seu portfólio de investimentos.</p>
+            <a href="tesouro-prefixado-entenda-investimento" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="tesouro-ipca-plus-investimento-inflacao" style="color: #1a202c; text-decoration: none;">Tesouro IPCA+: Entendendo o Investimento Protegido Contra a Inflação</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Descubra o que é o Tesouro IPCA+, como funciona e sua importância para proteger seu patrimônio da inflação.</p>
+            <a href="tesouro-ipca-plus-investimento-inflacao" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="o-que-sao-cdb-lci-e-lca" style="color: #1a202c; text-decoration: none;">CDB, LCI e LCA: Entendendo os Títulos de Renda Fixa e Sua Relevância Profissional</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Desmistifique CDB, LCI e LCA. Entenda o que são, como funcionam e sua importância para profissionais do mercado financeiro.</p>
+            <a href="o-que-sao-cdb-lci-e-lca" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="diferencas-cdb-lci-lca" style="color: #1a202c; text-decoration: none;">CDB, LCI e LCA: Entenda as Diferenças Essenciais para Seus Investimentos</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Desmistifique as diferenças entre CDB, LCI e LCA. Conheça características, rentabilidade, liquidez e tributação para investir com segurança.</p>
+            <a href="diferencas-cdb-lci-lca" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="tributacao-renda-fixa-guia-completo" style="color: #1a202c; text-decoration: none;">Tributação da Renda Fixa: Um Guia Completo para Investidores e Profissionais</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda a tributação da renda fixa no Brasil: IR, IOF, alíquotas regressivas. Guia técnico para CPA e C-Pro.</p>
+            <a href="tributacao-renda-fixa-guia-completo" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="tabela-regressiva-imposto-de-renda-investimentos" style="color: #1a202c; text-decoration: none;">Tabela Regressiva do Imposto de Renda: Entenda a Tributação de Investimentos</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Compreenda a tabela regressiva do Imposto de Renda sobre investimentos. Saiba como a alíquota diminui com o tempo.</p>
+            <a href="tabela-regressiva-imposto-de-renda-investimentos" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="o-que-sao-derivativos-guia-tecnico" style="color: #1a202c; text-decoration: none;">O que são Derivativos: Guia Técnico e Educacional para Profissionais Financeiros</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o que são derivativos financeiros, seus tipos e como são usados no mercado. Essencial para CPA, C-Pro R e C-Pro I da Anbima.</p>
+            <a href="o-que-sao-derivativos-guia-tecnico" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="contratos-futuros-mercado-financeiro" style="color: #1a202c; text-decoration: none;">Contratos Futuros: Entenda o Mecanismo e Suas Aplicações no Mercado Financeiro</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Descubra o que são contratos futuros, seus tipos, funcionamento, liquidação e como se aplicam no mercado financeiro. Essencial para a sua carreira.</p>
+            <a href="contratos-futuros-mercado-financeiro" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="opcoes-financeiras-derivativos-essenciais" style="color: #1a202c; text-decoration: none;">Opções Financeiras: Desmistificando Derivativos Essenciais para o Mercado</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Explore o universo das opções financeiras: o que são, como funcionam e sua importância para investidores e profissionais certificados pela Anbima.</p>
+            <a href="opcoes-financeiras-derivativos-essenciais" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="alavancagem-financeira-conceitos-riscos-oportunidades" style="color: #1a202c; text-decoration: none;">Alavancagem Financeira: Conceitos, Riscos e Oportunidades para Profissionais Certificados</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda a alavancagem financeira, seus impactos, riscos e como ela é abordada nas certificações Anbima (CPA, C-Pro R, C-Pro I). Artigo técnico.</p>
+            <a href="alavancagem-financeira-conceitos-riscos-oportunidades" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="o-que-e-diversificacao-de-investimentos" style="color: #1a202c; text-decoration: none;">O Que é Diversificação de Investimentos: Um Guia Essencial para Preservar e Multiplicar seu Capital</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o que é diversificação de investimentos, seus benefícios, como aplicá-la e sua importância para uma carteira financeira robusta.</p>
+            <a href="o-que-e-diversificacao-de-investimentos" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="o-que-e-benchmark-conceito-financeiro" style="color: #1a202c; text-decoration: none;">O que é Benchmark? Entenda o Conceito Financeiro e sua Relevância</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o que é benchmark financeiro, sua importância e como ele se aplica em investimentos. Guia técnico para profissionais.</p>
+            <a href="o-que-e-benchmark-conceito-financeiro" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="o-que-e-taxa-selic-guia-tecnico" style="color: #1a202c; text-decoration: none;">O que é a Taxa Selic: Guia Técnico e Educacional</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o que é a Taxa Selic, seu papel na economia brasileira, como ela é definida e seu impacto nos investimentos. Guia completo.</p>
+            <a href="o-que-e-taxa-selic-guia-tecnico" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="o-que-e-cdi" style="color: #1a202c; text-decoration: none;">O que é CDI: O Guia Definitivo para Investidores e Profissionais do Mercado Financeiro</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Descubra o que é CDI, seu papel como benchmark de investimentos, como é calculado e sua importância no mercado financeiro brasileiro.</p>
+            <a href="o-que-e-cdi" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="o-que-e-ibovespa-guia-tecnico" style="color: #1a202c; text-decoration: none;">O que é Ibovespa? Guia Técnico para Profissionais Financeiros e Certificações ANBIMA</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o que é Ibovespa, seu cálculo e importância para o mercado financeiro. Guia técnico para profissionais com foco nas certificações ANBIMA.</p>
+            <a href="o-que-e-ibovespa-guia-tecnico" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="etica-mercado-financeiro-certificacoes-anbima" style="color: #1a202c; text-decoration: none;">Ética no Mercado Financeiro: Pilares e Reflexos para Profissionais Certificados</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Explore a ética no mercado financeiro, seus princípios fundamentais e a importância para as novas Certificações Anbima (CPA, C-Pro R, C-Pro I).</p>
+            <a href="etica-mercado-financeiro-certificacoes-anbima" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="conflito-interesses-mercado-financeiro" style="color: #1a202c; text-decoration: none;">Conflito de Interesses no Mercado Financeiro: Guia Técnico para Profissionais Certificados</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o conflito de interesses no mercado financeiro. Guia técnico para CPA, C-Pro R e C-Pro I (Certificações Anbima).</p>
+            <a href="conflito-interesses-mercado-financeiro" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="prevencao-lavagem-dinheiro-pld-ft-guia-tecnico" style="color: #1a202c; text-decoration: none;">Prevenção à Lavagem de Dinheiro (PLD/FT): Um Guia Técnico e Educacional</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda a Prevenção à Lavagem de Dinheiro (PLD/FT) em detalhes técnicos. Essencial para o mercado financeiro e certificações Anbima.</p>
+            <a href="prevencao-lavagem-dinheiro-pld-ft-guia-tecnico" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="conheca-seu-cliente-kyc-mercado-financeiro" style="color: #1a202c; text-decoration: none;">KYC: Entenda o Conheça Seu Cliente Essencial para o Mercado Financeiro</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Saiba o que é KYC (Know Your Customer), sua importância, etapas e impacto no mercado financeiro. Essencial para certificações Anbima 2026.</p>
+            <a href="conheca-seu-cliente-kyc-mercado-financeiro" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="o-que-sao-produtos-estruturados" style="color: #1a202c; text-decoration: none;">Produtos Estruturados: Desvendando as Estratégias de Investimento para Profissionais Certificados</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o que são produtos estruturados, seus componentes, riscos e benefícios. Guia técnico para profissionais do mercado financeiro.</p>
+            <a href="o-que-sao-produtos-estruturados" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="o-que-e-coe-certificado-de-operacoes-estruturadas" style="color: #1a202c; text-decoration: none;">O que é COE? Entenda o Certificado de Operações Estruturadas</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o que é COE (Certificado de Operações Estruturadas), seus tipos, riscos e como funciona. Guia completo para investidores.</p>
+            <a href="o-que-e-coe-certificado-de-operacoes-estruturadas" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="credito-privado-investimento-financiamento" style="color: #1a202c; text-decoration: none;">Crédito Privado: Entenda Essa Alternativa de Investimento e Financiamento</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Descubra o que é crédito privado, como funciona para investidores e empresas. Entenda alternativas ao crédito bancário.</p>
+            <a href="credito-privado-investimento-financiamento" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="rating-de-credito-guia-completo" style="color: #1a202c; text-decoration: none;">Rating de Crédito: Entendendo a Nota que Define o Risco Financeiro</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Descubra o que é rating de crédito, como funciona e sua importância nas decisões financeiras e investimentos. Guia técnico para profissionais.</p>
+            <a href="rating-de-credito-guia-completo" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="spread-de-credito-entenda-o-risco-na-remuneracao-financeira" style="color: #1a202c; text-decoration: none;">Spread de Crédito: Entendendo o Risco na Remuneração Financeira</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Descubra o que é spread de crédito, como ele reflete o risco do tomador e sua importância no mercado financeiro e em certificações ANBIMA.</p>
+            <a href="spread-de-credito-entenda-o-risco-na-remuneracao-financeira" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="carteira-de-investimentos-estrategias-diversificacao" style="color: #1a202c; text-decoration: none;">Carteira de Investimentos: Estratégias e Diversificação para o Sucesso Financeiro</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda o que é uma carteira de investimentos, como montar e diversificar para alcançar seus objetivos financeiros com segurança e rentabilidade.</p>
+            <a href="carteira-de-investimentos-estrategias-diversificacao" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="custos-taxas-investimentos-guia-essencial" style="color: #1a202c; text-decoration: none;">Custos e Taxas nos Investimentos: Um Guia Essencial para o Investidor Moderno</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Entenda os custos e taxas que incidem sobre seus investimentos. Um guia completo e técnico para otimizar seus retornos. Essencial para sua carreira financeira.</p>
+            <a href="custos-taxas-investimentos-guia-essencial" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        
+        <div style="background: white; border: 1px solid #e2e8f0; border-radius: 12px; padding: 1.5rem; transition: all 0.2s;" onmouseover="this.style.borderColor='#00C853'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='#e2e8f0'; this.style.transform='translateY(0)'">
+            <h3 style="margin-top:0; margin-bottom: 0.5rem; font-size: 1.2rem;"><a href="carreiras-mercado-financeiro-guia-2026" style="color: #1a202c; text-decoration: none;">Carreiras no Mercado Financeiro: Um Guia Abrangente para 2026</a></h3>
+            <p style="font-size: 0.95rem; color: #64748b; line-height: 1.5; margin-bottom: 1rem;">Explore as diversas carreiras no mercado financeiro e as novas certificações Anbima para 2026. Guia técnico e educativo.</p>
+            <a href="carreiras-mercado-financeiro-guia-2026" style="font-weight: 600; font-size: 0.9rem;">Ler artigo &rarr;</a>
+        </div>
+        </div>
+            </div>
+
+            <!-- Injeção Condicional da Dica de Prova -->
+            
+
+        </article>
+
+        <div class="cta-box">
+            <div class="cta-bg-circle"></div>
+            <h2>Quer garantir sua aprovação?</h2>
+            <p>Monte seu plano de estudos personalizado. Pratique com questões reais sobre
+                <strong>Certificações Anbima</strong> e seja aprovado de primeira.
+            </p>
+            <a href="https://app.certifai.com.br" class="btn-cta">
+                Começar Simulado Grátis
+                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6">
+                    </path>
+                </svg>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 CertifAI. Todos os direitos reservados.</p>
+        <p style="font-size: 0.85rem; opacity: 0.8;">O material mais completo para CPA, C-Pro R, C-Pro I</p>
+    </footer>
+</body>
+
+</html>
