@@ -2,16 +2,10 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
-  "redirects": [
+  "rewrites": [
     {
-      "source": "/",
-      "destination": "https://app.certifai.com.br/",
-      "permanent": false
-    },
-    {
-      "source": "/onboarding",
-      "destination": "https://app.certifai.com.br/onboarding",
-      "permanent": false
+      "source": "/:path*",
+      "destination": "https://app.certifai.com.br/:path*"
     }
   ],
   "headers": [
