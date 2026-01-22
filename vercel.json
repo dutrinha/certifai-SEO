@@ -4,8 +4,12 @@
   "trailingSlash": false,
   "rewrites": [
     {
-      "source": "/:path*",
-      "destination": "https://app.certifai.com.br/:path*"
+      "source": "/",
+      "destination": "https://app.certifai.com.br/"
+    },
+    {
+      "source": "/:match*",
+      "destination": "https://app.certifai.com.br/:match*"
     }
   ],
   "headers": [
