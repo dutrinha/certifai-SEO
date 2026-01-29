@@ -2,6 +2,16 @@
   "version": 2,
   "cleanUrls": true,
   "trailingSlash": false,
+   "rewrites": [
+    {
+      "source": "/",
+      "destination": "https://app.certifai.com.br/"
+    },
+    {
+      "source": "/:match*",
+      "destination": "https://app.certifai.com.br/:match*"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -21,4 +31,5 @@
       ]
     }
   ]
+
 }
